@@ -237,6 +237,23 @@ echo -e '#import <Cocoa/Cocoa.h>\nint main() { NSLog(@"%@", SYSTEM_IMAGE_NAME); 
 
 where `SYSTEM_IMAGE_NAME` should be replaced with any value from [this list](https://developer.apple.com/documentation/appkit/nsimagename?language=objc).
 
+### `nativeImage.createMenuSymbol(imageName)` _macOS_
+
+* `imageName` string
+
+Returns `NativeImage`
+
+Creates a new `NativeImage` instance from an SF Symbol for use in a native [Menu](./menu.md). See [SF Symbols](https://developer.apple.com/sf-symbols/) for a list of possible values.
+
+```js
+const { nativeImage, MenuItem } = require('electron')
+
+const item = new MenuItem({
+  icon: nativeImage.createMenuSymbol('folder.badge.plus'),
+  label: 'Create Folder'
+})
+```
+
 ## Class: NativeImage
 
 > Natively wrap images such as tray, dock, and application icons.
