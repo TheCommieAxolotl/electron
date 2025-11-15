@@ -73,7 +73,6 @@ class View : public gin_helper::EventEmitter<View>,
 
   ui::Layer* GetLayer();
   void ApplyBorderRadius();
-  ui::Layer* GetLayer();
   void ReorderChildView(gin_helper::Handle<View> child, size_t index);
 
   std::vector<ChildPair> child_views_;
